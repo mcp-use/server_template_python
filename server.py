@@ -155,7 +155,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--transport",
         choices=["stdio", "sse", "streamable-http"],
-        default="stdio",
+        default="streamable-http",
         help="Transport type to use (default: stdio)"
     )
     parser.add_argument(
