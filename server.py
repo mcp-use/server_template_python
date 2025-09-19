@@ -161,8 +161,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--port",
         type=int,
-        default=8000,
+        default=3000,
         help="Port to run the server on (only used with sse transport, default: 8000)"
+    )
+    parser.add_argument(
+        "--host",
+        type=str,
+        default="0.0.0.0",
+        help="Host to use"
     )
     
     args = parser.parse_args()
@@ -171,6 +177,6 @@ if __name__ == "__main__":
     if args.transport == "stdio":
         mcp.run(transport='stdio')
     elif args.transport == "sse":
-        mcp.run(transport='sse', port=args.port)
+        mcp.run(transport='sse', port=args.port, host=args.host)
     elif args.transport == "streamable-http":
-        mcp.run(transport='streamable-http', port=args.port)
+        mcp.run(transport='streamable-http', port=args.port, host=args.host)
