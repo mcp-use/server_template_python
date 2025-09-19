@@ -171,6 +171,6 @@ if __name__ == "__main__":
     if args.transport == "stdio":
         mcp.run(transport='stdio')
     elif args.transport == "sse":
-        mcp.run(transport='sse')
+        mcp.run(transport='sse', port=args.port)
     elif args.transport == "streamable-http":
-        mcp.run(transport='streamable-http')
+        mcp.run(transport='streamable-http', port=args.port)
